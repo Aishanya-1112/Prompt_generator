@@ -132,7 +132,7 @@ with st.form("controls"):
 
 # Display API key status (simplified for Groq only)
 with st.expander("API Configuration Status"):
-    groq_key = os.getenv("GROQ_API_KEY")
+    groq_key = os.getenv("API_KEY")
     st.write("**Groq API Key:**", " Configured !!" if groq_key else " Missing")
     
     if not groq_key:
@@ -167,7 +167,7 @@ if submitted:
     # Check API key
     groq_key = os.getenv("GROQ_API_KEY")
     if not groq_key:
-        st.error("GROQ_API_KEY not found in environment variables. Please add it to your .env file.")
+        st.error("API key not found in environment variables. Please add key to your .env file.")
         st.stop()
 
     tuned_prompts = []
