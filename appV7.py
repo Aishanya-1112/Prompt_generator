@@ -39,7 +39,7 @@ def ask_groq(user_prompt, system_prompt, model="llama-3.1-8b-instant", temperatu
         return response.choices[0].message.content
         
     except Exception as e:
-        return f"[ERROR] Groq API error: {str(e)}"
+        return f"[ERROR] API error: {str(e)}"
 
 # Alternative GPT-4o-mini function (commented out for backend use only)
 # def ask_gpt4o_mini(prompt, temperature=0.3, max_tokens=512):
@@ -132,7 +132,7 @@ with st.form("controls"):
 
 # Display API key status (simplified for Groq only)
 with st.expander("API Configuration Status"):
-    groq_key = os.getenv("API_KEY")
+    groq_key = os.getenv("GROQ_API_KEY")
     st.write("**API Key:**", " Configured !!" if groq_key else " Missing")
     
     if not groq_key:
@@ -268,4 +268,3 @@ else:
     #st.dataframe(example_df, use_container_width=True)
 
 st.markdown("---")
-
