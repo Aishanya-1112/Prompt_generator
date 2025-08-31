@@ -133,7 +133,7 @@ with st.form("controls"):
 # Display API key status (simplified for Groq only)
 with st.expander("API Configuration Status"):
     groq_key = os.getenv("API_KEY")
-    st.write("**Groq API Key:**", " Configured !!" if groq_key else " Missing")
+    st.write("**API Key:**", " Configured !!" if groq_key else " Missing")
     
     if not groq_key:
         st.error("API key not found in environment variables. Please add key to your .env file.")
@@ -268,3 +268,4 @@ else:
     #st.dataframe(example_df, use_container_width=True)
 
 st.markdown("---")
+
